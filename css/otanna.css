@@ -1,0 +1,1067 @@
+@charset "UTF-8";
+
+/* Resets (based on: http://meyerweb.com/eric/tools/css/reset/ | v2.0 | 20110126 | License: none (public domain)) */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit; /* this will eliminate bold, italics for <b>, <i> */
+  vertical-align: baseline;
+  background: transparent; 
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Additional resets */
+
+@-webkit-viewport {
+  width: device-width; 
+}
+@-moz-viewport {
+  width: device-width; 
+}
+@-ms-viewport {
+  width: device-width; 
+}
+@-o-viewport {
+  width: device-width; 
+}
+@viewport {
+  width: device-width; 
+}
+
+html {
+	height: 100%;
+	font-size: 17px; /* if I use rem rather than em for relative sizes, it bases it on the font size of the html element. */
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: #f6f5f5;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+}
+
+body {
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	background-color: white; /*#f7f7f7;*/
+	height: 100%;
+	text-align: left;
+	font-family:  'Montserrat', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.1rem; /* if I use rem rather than em for relative sizes, it bases it on the font size of the html element. */
+	line-height: 1.5;
+	color: black;
+}
+
+/* ************************************************************ */
+/* Text-level styling */
+
+b, strong { 
+	font-weight: bold;
+}
+i, em { 
+	font-style: italic;
+}
+a {
+	text-decoration:none;
+	color: inherit;
+}
+h1, h3, h4, h5, .h1, .h3, .h4, .h5 {
+	font-weight: 400;
+	line-height: 1.3;
+}
+h2, h3, h4, .h2, .h3, .h4 {
+	font-family:  'Bitter', serif;
+}
+h2, .h2 {
+	font-size: 2.7rem;
+	font-weight: 700;
+	margin: 0.8rem 0 1rem 0;
+}
+h3, .h3 {
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 2rem 0 1rem 0;
+	text-align: center;
+}
+h4, .h4 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem 0;
+}
+h5, .h5 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin: 0;
+}
+h6, .h6 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	line-height: 1.3;
+	margin: 1.5rem 0 0 0;
+}
+h7, .h7 {
+	font-size: 1.1rem;
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.3;
+	margin: 3rem 0 0 0;
+}
+p, .p {
+	margin: 1.2em 0 1.6em 0;
+}
+ul {
+	list-style: circle;
+}
+li {
+	padding-bottom: 0.8em;
+	margin-left: 40px;
+}
+img {
+	max-width: 100%;
+}
+
+/* ************************************************************ */
+/* General Structural styling. */
+
+.anchor {
+	display: block;
+	position: relative;
+	top: -200px;
+	visibility: hidden;	
+}
+
+.offscreen {
+	display: none; 
+}
+.offscreenTransition {
+	/* display: none; *//* css3 transitions don't work on the display property. Apparently position:absolute and visibility:hidden works the same. */
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+	width: auto;
+}
+
+/** 
+ * The .clearfloat class applied to the container div seems to be the best way to "clear the float" when using 
+ * float based layouts. This generates an element after (the before one isn't really needed) the container. See: 
+ * https://stackoverflow.com/questions/490184/what-is-the-best-way-to-clear-the-css-style-float
+ * https://www.cssmojo.com/latest-new-clearfix-so-far/
+ * https://www.altitudesystems.co.uk/how-to-clear-css-float 
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfloat:before,
+.clearfloat:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+    line-height: 0;
+    height: 0;
+}
+.clearfloat:after {
+    clear: both;
+}
+
+
+/* Setting up the page so the footer is always at the bottom, according to: 
+ * https://stackoverflow.com/questions/15960290/css-footer-not-displaying-at-the-bottom-of-the-page/15960308 
+ * https://matthewjamestaylor.com/bottom-footer 
+ * The only modification I've made is that instead of dividing the page into three sections (header, body, footer), 
+ * I've divided it into two sections (subpage and footer). 
+ */
+#page {
+	min-height: 100%;
+	position: relative;
+	width:100%;
+}
+#subpage { /* Holds everything except the footer. */
+	width:100%;
+	padding-bottom:200px;   /* Height of the footer, can be in px or em. */
+	/*background-image: linear-gradient(to bottom, white, #f7f0ed);*/
+}
+#footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:200px;   /* Height of the footer, can be in px or em. */
+	color: #686868;
+	font-size: 0.9rem;
+}
+
+
+/* A simple layout system. A single outer container with single inner container to contain page elements (eg. sub-columns). 
+ * This is simple and quite flexible but it means that the backgrounds of any inner left and right columns can't extend  
+ * past the inner container. 
+ */
+.outer {
+	width: 100%;
+}
+.innerUltraWide {
+	max-width: 2200px;
+	margin: 0 auto; /* top and bottom are first (0), left and right are second (auto) */
+	padding: 0;
+}
+.inner {
+	max-width: 1800px;
+	margin: 0 auto; /* top and bottom are first (0), left and right are second (auto) */
+	padding: 2rem 1.2rem;
+	/*box-sizing: border-box;*/  /* Sets the border on the inside of the div. */
+	/*-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border-left: 34px solid #f7f7f7;
+	border-right: 34px solid #f7f7f7;*/
+}
+.singleNarrow { /* intended for an even narrower reading column within the .inner container */
+	max-width: 800px;
+	margin: 0 auto; 
+	padding: 0 1.5rem 1px 1.5rem; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.singleWide { 
+	margin: 0 auto; 
+	padding: 0 1.5rem 1px 1.5rem; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.innerWide { 
+	margin: 0 auto; 
+	padding: 0 0.9rem 1px 0.9rem; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.innerMedium { 
+	max-width: 1200px;
+	margin: 0 auto; 
+	padding: 0 0.4rem 1px 0.4rem; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.innerNarrow { /* like singleNarrow, but intended to wrap "segments" (see below) for the possibility of multiple columns while still preserving padding */
+	max-width: 800px;
+	margin: 0 auto; 
+	padding: 0 0.4rem 1px 0.4rem;
+}
+.segment {
+	display: inline-block;
+	vertical-align: top;
+	margin: 2rem auto; 
+	padding: 0 1.5% 0 1.5%; /* the width and padding need to add up precisely, and (IMPORTANT) the closing and opening div tags of contiguous elements must be right beside each other with no separating space or newline. */
+}
+._100 {
+	width: 97.6%; 
+	padding: 0 1.2%;
+}
+._90 {
+	width: 87%; 
+}
+._85 {
+	width: 82%; 
+}
+._80 {
+	width: 77%; 
+}
+._75 {
+	width: 72%; 
+}
+._70 {
+	width: 67%; 
+}
+._66 {
+	width: 63%; 
+}
+._65 {
+	width: 62%; 
+}
+._60 {
+	width: 57%; 
+}
+._55 {
+	width: 52%; 
+}
+._50 {
+	width: 47%; /* the width and padding need to add up precisely, and (IMPORTANT) the closing and opening div tags of contiguous elements must be right beside each other with no separating space or newline. */
+}
+._45 {
+	width: 42%; 
+}
+._40 {
+	width: 37%; 
+}
+._35 {
+	width: 32%; 
+}
+._34 {
+	width: 31%; 
+}
+._33 {
+	width: 30%; 
+}
+._30 {
+	width: 27%; 
+}
+._25 {
+	width: 22%; 
+}
+._20 {
+	width: 17%; 
+}
+._15 {
+	width: 12%; 
+}
+._10 {
+	width: 7%; 
+}
+
+
+
+/* A more complicated and less flexible left-right layout system enabling the left and right sides to each have their own backgrounds that 
+ * extend to the very edge of the page while the inner content is still contained within a tighter boundary. The inner max-widths need to 
+ * be carefully proportioned to each other to match the ratio of the outer widths.
+ */
+.leftOuter {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: right;
+	width: 50%;
+	margin: 0 0 0 auto;
+/*	background-image: url(../images/blocks6c.jpg);
+	background-size: cover;
+	background-position: left center;
+*/
+}
+.rightOuter {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	margin: 0 auto 0 0;
+}
+.leftInner {
+	max-width: 668px;
+	margin: 0 0 0 auto; 
+	padding: 0 40px 1px 0; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.rightInner {
+	max-width: 668px;
+	margin: 0 auto 0 0; 
+	padding: 0 0 1px 0; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+}
+.soloOuter {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: right;
+	width: 95%;
+	margin: 0 0 0 auto;
+/*	background-image: url(../images/blocks6c.jpg);
+	background-size: cover;
+	background-position: left center;
+*/
+}
+
+
+
+/* ************************************************************ */
+/* Header. */
+
+#headerContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100000;
+	font-size: 1.3rem;
+	font-weight: 400;
+	font-family: 'Alegreya Sans', 'Montserrat', Helvetica, Arial, sans-serif;
+	background-color: white;
+	/*border-bottom: 1px solid #f7f7f7;*/
+}
+
+#header {
+}
+
+#header h1 {
+	float: left;
+	vertical-align: middle;
+	padding: 10px 20px 20px 20px;
+}
+#toplogo {
+	margin: 30px 0 0 20px;
+	width: 360px;
+	height: 140px;
+	background-image: url(../images/logo1-small.png);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+}
+
+#topnav {
+	float: right;
+	vertical-align: middle;
+	padding: 70px 680px 0 0;
+}
+#topnav li {	
+	vertical-align: middle;
+	padding: 30px 0;
+	margin-left: 0; /* It is set to non-zero default for li */
+}
+#topnav li.vis2, #topnav li.vis3 {	
+	display: inline-block;
+}
+#topnav li.vis1 {	
+	display: none;
+}
+
+#topnav li a {	
+	padding: 10px;
+	color: black;
+}
+#topnav li a:hover {	
+	color: #686868;
+}
+#topnav li span {	
+	padding: 10px;
+}
+
+
+
+/* ************************************************************ */
+/* Drop-down nav. */
+
+#dropdownnav {
+	background-color: #FFFFFF;
+	color: #FFF;
+	padding: 0px 0;
+	height: auto;
+	visibility: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.9s ease-in-out;
+  -o-transition: opacity 0.9s ease-in-out;
+  -moz-transition: opacity 0.9s ease-in-out;
+  transition: opacity 0.9s ease-in-out; 
+
+}
+
+#headerContainer #dropdownnav {
+	/*-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease; 
+	*//*
+    -webkit-transition: opacity 0.9s ease-in-out;
+    -o-transition: opacity 0.9s ease-in-out;
+    -moz-transition: opacity 0.9s ease-in-out;
+    transition: opacity 0.9s ease-in-out; 
+
+
+    -webkit-transition: height 0.9s ease-in-out;
+    -o-transition: height 0.9s ease-in-out;
+    -moz-transition: height 0.9s ease-in-out;
+    transition: height 0.9s ease-in-out; 
+	*/
+}
+
+
+/* ************************************************************ */
+/* Banner. */
+
+#topSpacer {
+	margin: 190px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+}
+
+#banner {
+	margin: 190px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	background-image: url(../images/blocks6c-tweak2.jpg);
+	background-position: center top;
+	background-size: cover;
+	/*background-color: #f7f3f1;
+	background-blend-mode: overlay;*/
+}
+
+#banner h1 {
+	color: inherit;
+}
+
+#banner .leftOuter {
+	padding: 0 0;
+	margin: 260px 0 3rem 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	height: 120px;
+	color: #fa9284; /*#f65a4a;*/ /*#4f5655;*/
+	 /* text-shadow: -1px -1px 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 1px 1px 0 #fff; */
+	font-size: 1.4rem;
+	font-weight: 400;
+	line-height: 1.5;
+	/*background-image: url(../images/blanket1e.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: auto; */
+	/*background-image: linear-gradient(to left, #f9eeea , white);*/
+}
+#banner .rightOuter {
+	padding: 0 0;
+	margin: 260px 0 3rem 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	height: 120px;
+	background-image: url(../images/blocks6e.jpg);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+#extraBannerPanel {
+	display: none;
+	background-color: #b6ddff;
+	background-image: url(../images/blocks6e.jpg);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+/*
+#banner .rightOuter {
+	display: none;
+}
+#banner .leftOuter {
+	max-width: none;
+	width: 100%;
+}
+*/
+#phoneLogo {
+	display: none;
+	max-width: 750px;
+	width: 100%;
+	padding: 0px 0px;
+	margin: 100px 0 60px 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	height: 40px;
+	color: #686868;
+}
+#banner .soloOuter {
+	padding: 0 0;
+	margin: 10px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	height: 120px;
+	color: #fa9284; /*#f65a4a;*/ /*#4f5655;*/
+	 /* text-shadow: -1px -1px 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 1px 1px 0 #fff; */
+	font-size: 1.4rem;
+	font-weight: 400;
+	line-height: 1.5;
+	/*background-image: url(../images/blanket1e.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: auto; */
+	/*background-image: linear-gradient(to left, #f9eeea , white);*/
+}
+
+.adjustPad {
+	padding-top: 380px; /* possibility for when the dropdownnav is visible */
+}
+#quoteContainer {
+	margin: 1rem 1rem;
+}
+#citation {
+	font-size: 1rem;
+}
+
+
+/* ************************************************************ */
+/* Main. */
+
+.pagenav {
+  text-align: center;
+	font-size: 1.4rem;
+	font-weight: 500;
+  padding-bottom: 30px;
+}
+.pagenav li {	
+	vertical-align: middle;
+	padding: 30px 0;
+	margin-left: 0; /* It is set to non-zero default for li */
+	display: inline-block;
+}
+.pagenav li a {	
+	padding: 10px;
+}
+.pagenav li a:hover {	
+	color: #686868;
+}
+.pagenav li .delimiter {	
+	padding: 10px 1.5rem;
+}
+
+.button {
+	background: #fbfaf8;
+	padding: 50px 40px;
+	margin: 20px 0;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: #f9d9cd;
+}
+.panel {
+	background: #fbfaf8;
+	padding: 50px 40px;
+	margin: 20px 0;
+	vertical-align: middle;
+}
+
+
+.tan { 
+	background: #fbfaf8;
+	padding: 10px 20px 20px 20px;
+	vertical-align: middle;
+}
+.tan:hover {
+	background-color: #f9d9cd;
+}
+.imgcontainer {
+	text-align: center;
+}
+
+#portrait {
+	max-width: 100%;
+	height: auto;
+	border-radius: 50%;
+	margin: 0;
+}
+
+#bgportrait {
+	margin: 0 auto;
+	width: auto;
+	height: 550px;
+	background-image: url(../images/Anna-5b.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain; 
+	/*border-radius: 50%;*/
+}
+.marker {
+	margin: 0 auto;
+	width: 60px;
+	height: 60px;
+	background-image: url(../images/flower1c.png);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+}
+
+/* ************************************************************ */
+/* Footer. */
+
+#footer {
+	/* See also footer height settings under General Structural styling. */
+	background-image: url(../images/blocks6c-tweak2.jpg);
+	background-position: center top;
+	background-size: auto;
+}
+
+
+/* ************************************************************ */
+/* Meda queries begin. */
+/* ************************************************************ */
+
+/* ------------------------------------ */
+@media (max-width: 1600px) {
+	
+	#topnav {
+		padding-right: 380px;
+	}
+}
+
+/* ------------------------------------ */
+@media (max-width: 1200px) {
+	#header h1 {
+		padding: 10px 0 20px 0;
+	}
+	#toplogo {
+	}
+	#topnav {
+		padding-right: 80px;
+	}
+}
+/* ------------------------------------ */
+@media (max-width: 900px) {
+	#toplogo {
+		margin-left: 14px;
+	}
+	#topnav {
+		padding-right: 20px;
+	}
+	#banner .rightOuter {
+		max-width: 900px;
+		width: 100%;
+		margin-bottom: 0;
+		height: 90px;
+		margin-top: 290px; /*300px;*/ /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	}
+	#banner .leftOuter {
+		max-width: 900px;
+		width: 100%;
+		margin-top: 0;  /* This div is now on the bottom, so no longer needs the extra pad to account for the fixed top bar. */
+	}
+
+	.pagenav {
+		font-size: 1.3rem;
+	}
+	.pagenav li .delimiter {	
+		padding: 10px 1.3rem;
+	}
+
+
+}
+/* ------------------------------------ */
+@media (max-width: 770px) {
+	#topSpacer {
+		margin: 135px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	}
+	.anchor {
+		top: -140px;
+	}
+
+	#headerContainer {
+	}
+	#header h1 {
+		padding: 10px 20px;
+	}
+	#toplogo {
+		margin: 0 0 0 0;
+		width: 200px;
+		height: 115px;
+		background-image: url(../images/logo1-phone4.png);
+		background-position: left bottom;
+		background-repeat: no-repeat;
+		background-size: 100% 100%; 
+	}
+	#topnav {
+		padding: 0 20px 0 0;
+	}
+	#phoneLogo {
+		display: inline-block;
+	}
+	#banner {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+	#banner .soloOuter {
+		margin-bottom: 40px;
+	}
+	#banner .leftOuter {
+		max-width: 750px;
+		width: 100%;
+		padding: 0 0;
+		height: 140px;
+	}
+	#banner .rightOuter {
+		display: inline-block;
+		max-width: 750px;
+		width: 100%;
+		padding: 0px 0px;
+		margin: 190px 0 30px 40px; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+		height: 130px;
+		background-image: url(../images/logo1-small-text4-circle.png);
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: auto 100%; 
+	}
+	#extraBannerPanel {
+		display: inline-block;
+		max-width: 900px;
+		width: 100%;
+		padding: 0 0;
+		margin: 50px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+		height: 70px;
+	}
+
+	.pagenav {
+		font-size: 1.2rem;
+	}
+	.pagenav li .delimiter {	
+		padding: 10px 1rem;
+	}
+	
+	.pagenav.goVertical li {	
+		font-size: 1.1rem;
+	}
+	.pagenav.goVertical li .delimiter {	
+		padding: 10px 0.6rem;
+	}
+
+}
+/* ------------------------------------ */
+@media (max-width: 600px) {
+
+	.pagenav {
+		font-size: 1.1rem;
+	}
+	.pagenav li .delimiter {	
+		padding: 10px 0.7rem;
+	}
+	.pagenav.goVertical {	
+		padding-top: 1rem;
+		padding-bottom: 0.8rem;
+	}
+	.pagenav.goVertical li {	
+		display: block;
+		text-align: left;
+		padding: 2rem 0 0 2rem;
+	}
+	.pagenav.goVertical li .delimiter {	
+		display: none;
+	}
+
+}
+/* ------------------------------------ */
+@media (max-width: 520px) {
+	#topSpacer {
+		margin: 120px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	}
+	.anchor {
+		top: -120px;
+	}
+	#headerContainer {
+	}
+	#header h1 {
+		padding: 10px 20px;
+	}
+	#toplogo {
+		width: 150px;
+		height: 85px;
+	}
+	#topnav {
+		padding: 0 10px 0 0;
+		font-size: 1.2rem;
+	}
+	#phoneLogo {
+		margin-top: 100px;
+	}
+
+}
+
+
+/* ------------------------------------ */
+@media (max-width: 1000px) {
+
+	._100 {
+		/* Sometimes a segment that becomes a single wide column on narrow screens needs to override the width:auto (see above) and explicitly specify 100%, for example when its only content is an empty div with a background image. */
+		width: 97%; 
+		margin: 1rem auto; 
+		padding: 0 1.5%;
+	}
+	
+} /* end media query */
+
+/* ------------------------------------ */
+@media (max-width: 770px) {
+
+	#portrait {
+		max-width: 80%;
+	}
+
+
+/*	#topnav li.vis3 {
+		display: none;
+	}
+	#topnav li.vis2 {
+		display: inline-block;
+	}
+	#topnav li.vis1 {
+		display: inline-block;
+	}
+*/
+	/* For the simple layout system. */
+	.inner {
+		max-width: 770px;
+	}
+	.singleNarrow { /* intended for an even narrower reading column within the .inner container */
+		padding: 0 0.5rem 1px 0.5rem; /* for some reason the padding-bottom needs to be non-zero for the bottom inner <p> margin to not collapse */
+	}
+	.innerNarrow, .innerMedium, .innerWide { /* like singleNarrow, but intended to wrap "segments" (see below) for the possibility of multiple columns while still preserving padding */
+		padding: 0 0.2rem 1px 0.2rem;
+	}
+	.segment {
+		width: auto;
+		margin: 1rem auto; 
+		padding: 0 1.5%;
+	}
+	.tablet100 {  /* Sometimes a segment that becomes a single wide column on narrow screens needs to override the width:auto (see above) and explicitly specify 100%, for example when its only content is an empty div with a background image. */
+		width: 97%; 
+	}
+	.tablet70 {
+		width: 67%;
+	}
+	.tablet66 {
+		width: 63%;
+	}
+	.tablet60 {
+		width: 57%;
+	}
+	.tablet55 {
+		width: 52%;
+	}
+	.tablet50 {
+		width: 47%;
+	}
+	.tablet45 {
+		width: 42%;
+	}
+	.tablet40 {
+		width: 37%;
+	}
+	.tablet34 {
+		width: 31%;
+	}
+	.tablet33 {
+		width: 30%;
+	}
+	.tablet30 {
+		width: 27%;
+	}
+	.tablet25 {
+		width: 22%;
+	}
+	.tablet0 {
+		display: none;
+	}
+		
+	/* For the more complex left-right layout system. */
+	.leftOuter {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.rightOuter {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.leftInner {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	.rightInner {
+		max-width: 700px;
+		margin: 0 auto; 
+	}
+
+} /* end media query */
+
+
+/* ------------------------------------ */
+@media (max-width: 550px) {
+
+/*	#topnav li.vis3 {
+		display: none;
+	}
+	#topnav li.vis2 {
+		display: none;
+	}
+	#topnav li.vis1 {
+		display: inline-block;
+	}
+*/
+	.segment {
+		width: 100%	;
+		margin: 0.7rem auto; 
+		padding: 0 1.5%;
+	}
+	.phone100 {  /* Sometimes a segment that becomes a single wide column on narrow screens needs to override the width:auto (see above) and explicitly specify 100%, for example when its only content is an empty div with a background image. */
+		width: 97%; 
+	}
+	.phone70 {
+		width: 67%;
+	}
+	.phone66 {
+		width: 63%;
+	}
+	.phone60 {
+		width: 57%;
+	}
+	.phone55 {
+		width: 52%;
+	}
+	.phone50 {
+		width: 47%;
+	}
+	.phone45 {
+		width: 42%;
+	}
+	.phone40 {
+		width: 37%;
+	}
+	.phone34 {
+		width: 31%;
+	}
+	.phone33 {
+		width: 30%;
+	}
+	.phone30 {
+		width: 27%;
+	}
+	.phone0 {
+		display: none;
+	}
+	
+
+	.tan { 
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+	}
+
+} /* end media query */
+
+
+
+/* ************************************************************ */
+/* Helpful overrides */
+
+.zeroSidePad {
+	padding-left: 0;
+	padding-right: 0;
+}
+.zeroSideMargin {
+	margin-left: 0;
+	margin-right: 0;
+}
+.textright {
+	text-align: right;
+}
+.textleft {
+	text-align: left;
+}
+.textcenter {
+	text-align: center;
+}
+.vmiddle {
+	vertical-align: middle;
+}
+.vtop {
+	vertical-align: top;
+}
+.vbottom {
+	vertical-align: bottom;
+}
+
+
