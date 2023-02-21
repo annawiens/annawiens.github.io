@@ -885,6 +885,10 @@ img {
 		width: 100px;
 		height: 56px;
 	}
+	
+	#banner .soloOuter {
+		font-size: 1rem;
+	}
 
 }
 
