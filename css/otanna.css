@@ -872,6 +872,13 @@ img {
 
 /* ------------------------------------ */
 @media (max-width: 450px) {
+	#topSpacer {
+		margin: 80px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
+	}
+	.anchor {
+		top: -80px;
+	}
+
 	#toplogo {
 		width: 120px;
 		height: 67px;
