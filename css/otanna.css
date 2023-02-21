@@ -60,7 +60,7 @@ table {
 
 html {
 	height: 100%;
-	font-size: 17px; /* if I use rem rather than em for relative sizes, it bases it on the font size of the html element. */
+	font-size: 16px; /* if I use rem rather than em for relative sizes, it bases it on the font size of the html element. */
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: #f6f5f5;
   -webkit-text-size-adjust: 100%;
@@ -108,7 +108,7 @@ h2, .h2 {
 	margin: 0.8rem 0 1rem 0;
 }
 h3, .h3 {
-	font-size: 2rem;
+	font-size: 2.2rem;
 	font-weight: 600;
 	margin: 2rem 0 1rem 0;
 	text-align: center;
