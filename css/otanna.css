@@ -130,11 +130,11 @@ h6, .h6 {
 	margin: 1.5rem 0 0 0;
 }
 h7, .h7 {
-	font-size: 1.1rem;
-	font-weight: 400;
-	font-style: italic;
+	font-size: 1.3rem;
+	font-weight: 500;
 	line-height: 1.3;
 	margin: 3rem 0 0 0;
+	color: #686868;
 }
 p, .p {
 	margin: 1.2em 0 1.6em 0;
@@ -499,7 +499,7 @@ img {
 
 #banner {
 	margin: 190px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
-	background-image: url(../images/blocks6c-tweak2.jpg);
+	background-image: url(../images/green_orchids_narrow1.jpg);
 	background-position: center top;
 	background-size: cover;
 	/*background-color: #f7f3f1;
@@ -631,7 +631,7 @@ img {
 
 
 .tan { 
-	background: #fbfaf8;
+	background: #faf9f7; 
 	padding: 10px 20px 20px 20px;
 	vertical-align: middle;
 }
@@ -674,7 +674,7 @@ img {
 
 #footer {
 	/* See also footer height settings under General Structural styling. */
-	background-image: url(../images/blocks6c-tweak2.jpg);
+	background-image: url(../images/green_orchids_narrow1.jpg);
 	background-position: center top;
 	background-size: auto;
 }
@@ -1062,6 +1062,9 @@ img {
 }
 .vbottom {
 	vertical-align: bottom;
+}
+.bottompad {
+	padding-bottom: 40px;
 }
 
 
