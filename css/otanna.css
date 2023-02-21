@@ -709,6 +709,11 @@ img {
 }
 /* ------------------------------------ */
 @media (max-width: 900px) {
+
+	html {
+		font-size: 16px;
+	}
+
 	#toplogo {
 		margin-left: 14px;
 	}
@@ -739,6 +744,7 @@ img {
 }
 /* ------------------------------------ */
 @media (max-width: 770px) {
+
 	#topSpacer {
 		margin: 135px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
 	}
@@ -769,9 +775,6 @@ img {
 	#banner {
 		margin-top: 0;
 		margin-bottom: 30px;
-	}
-	#banner .soloOuter {
-		margin-bottom: 40px;
 	}
 	#banner .leftOuter {
 		max-width: 750px;
@@ -807,7 +810,7 @@ img {
 		padding: 10px 1rem;
 	}
 	
-	.pagenav.goVertical li {	
+	.pagenav li {	
 		font-size: 1.1rem;
 	}
 	.pagenav.goVertical li .delimiter {	
@@ -817,6 +820,10 @@ img {
 }
 /* ------------------------------------ */
 @media (max-width: 600px) {
+
+	html {
+		font-size: 15px;
+	}
 
 	.pagenav {
 		font-size: 1.1rem;
@@ -858,20 +865,17 @@ img {
 	}
 	#topnav {
 		padding: 0 10px 0 0;
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 	}
 	#phoneLogo {
 		margin-top: 100px;
-	}
-
-	#banner .soloOuter {
-		font-size: 1.1rem;
 	}
 
 }
 
 /* ------------------------------------ */
 @media (max-width: 450px) {
+
 	#topSpacer {
 		margin: 80px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
 	}
@@ -894,7 +898,7 @@ img {
 	}
 	
 	#banner .soloOuter {
-		font-size: 0.9rem;
+		font-size: 1.1rem;
 	}
 
 }
