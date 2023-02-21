@@ -594,9 +594,9 @@ img {
 
 .pagenav {
   text-align: center;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	font-weight: 500;
-  padding-bottom: 30px;
+  	padding-bottom: 30px;
 }
 .pagenav li {	
 	vertical-align: middle;
@@ -709,7 +709,7 @@ img {
 	}
 	
 	.pagenav {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 	}
 
 }
@@ -807,7 +807,7 @@ img {
 	}
 
 	.pagenav {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 	.pagenav li .delimiter {	
 		padding: 10px 1rem;
