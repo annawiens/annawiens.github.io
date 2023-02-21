@@ -872,35 +872,21 @@ img {
 
 /* ------------------------------------ */
 @media (max-width: 450px) {
-	#topSpacer {
-		margin: 120px 0 0 0; /* either padding-top or margin-top must also account for the space covered by the fixed header */
-	}
-	.anchor {
-		top: -120px;
-	}
-	#headerContainer {
-	}
-	#header h1 {
-		padding: 10px 20px;
-	}
 	#toplogo {
 		width: 120px;
 		height: 67px;
 	}
-	#topnav {
-		padding: 0 10px 0 0;
-		font-size: 1.1rem;
-	}
-	#phoneLogo {
-		margin-top: 100px;
-	}
-
-	#banner .soloOuter {
-		font-size: 1.1rem;
-	}
 
 }
 
+/* ------------------------------------ */
+@media (max-width: 400px) {
+	#toplogo {
+		width: 100px;
+		height: 56px;
+	}
+
+}
 
 /* ------------------------------------ */
 @media (max-width: 1000px) {
