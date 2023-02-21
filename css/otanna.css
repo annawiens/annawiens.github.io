@@ -707,6 +707,10 @@ img {
 	#banner .soloOuter {
 		font-size: 1.2rem;
 	}
+	
+	.pagenav {
+		font-size: 1.3rem;
+	}
 
 }
 /* ------------------------------------ */
@@ -735,9 +739,6 @@ img {
 		margin-top: 0;  /* This div is now on the bottom, so no longer needs the extra pad to account for the fixed top bar. */
 	}
 
-	.pagenav {
-		font-size: 1.3rem;
-	}
 	.pagenav li .delimiter {	
 		padding: 10px 1.3rem;
 	}
